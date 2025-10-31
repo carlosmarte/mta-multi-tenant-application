@@ -1,6 +1,6 @@
 {
   "name": "@thinkeloquent/figma-component-inspector-backend",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Figma Component Inspector Backend API",
   "license": "MIT",
   "author": "ThinkEloquent",
@@ -30,7 +30,12 @@
   "files": [
     "dist",
     "CHANGELOG.md",
-    "README.md"
+    "README.md",
+    "sequelize-seed",
+    "sequelize-migration",
+    "sequelize.Makefile",
+    "sequelize-seed",
+    ".sequelizerc"
   ],
   "scripts": {
     "build": "tsc",

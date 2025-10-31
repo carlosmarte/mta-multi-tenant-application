@@ -1,5 +1,11 @@
 # @thinkeloquent/figma-component-inspector-backend
 
+## 1.0.7
+
+### Patch Changes
+
+- release
+
 ## 1.0.6
 
 ### Patch Changes

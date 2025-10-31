@@ -24,7 +24,25 @@ async function figmaInspectorPlugin(fastify, opts) {
         fastify.log.info('[figma-inspector] Using database connection from environment variables');
     }
     if (!databaseUrl) {
-        throw new Error('Database URL is required. Please set DATABASE_URL or PostgreSQL environment variables.');
+        // Provide detailed diagnostics about missing environment variables
+        const envStatus = {
+            DATABASE_URL: !!process.env.DATABASE_URL,
+            POSTGRES_USER: !!process.env.POSTGRES_USER,
+            POSTGRES_PASSWORD: !!process.env.POSTGRES_PASSWORD,
+            POSTGRES_HOST: !!process.env.POSTGRES_HOST,
+            POSTGRES_PORT: !!process.env.POSTGRES_PORT,
+            POSTGRES_DB: !!process.env.POSTGRES_DB,
+        };
+        const missingVars = Object.entries(envStatus)
+            .filter(([, exists]) => !exists)
+            .map(([key]) => key);
+        fastify.log.error({
+            message: 'Database configuration is incomplete',
+            envStatus,
+            missingVars,
+        });
+        throw new Error(`Database URL is required. Missing environment variables: ${missingVars.join(', ')}. ` +
+            'Please set DATABASE_URL or all of: POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB');
     }
     // Initialize Sequelize with app-specific factory
     const { client, disconnect } = await createFigmaInspectorSequelize({
