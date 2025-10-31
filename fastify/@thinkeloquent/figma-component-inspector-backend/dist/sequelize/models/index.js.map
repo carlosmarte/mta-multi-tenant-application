@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/sequelize/models/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAgD,gBAAgB,EAAe,MAAM,cAAc,CAAC;AACpH,OAAO,EAAE,YAAY,EAA0D,qBAAqB,EAAE,MAAM,mBAAmB,CAAC;AAChI,OAAO,EAAE,UAAU,EAAsD,mBAAmB,EAAE,MAAM,iBAAiB,CAAC;AACtH,OAAO,EAAE,oBAAoB,EAA0E,6BAA6B,EAAE,MAAM,2BAA2B,CAAC"}

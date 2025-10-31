@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+
+# Figma data files with AWS-signed URLs
+**/figma-files/*.json
+**/figma-files/images/
+**/*_structure.json
+**/figma-data.json
+**/consolidated_data.json
+**/test_output/
+**/_test_output/
